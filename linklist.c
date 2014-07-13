@@ -5,7 +5,7 @@ typedef struct NODE {
 	char data;
 	struct NODE *next;
 }node;
-
+node *createnode();
 void main() 
 {
 	node *head, *current, *n1, *n2, *n3;
@@ -31,5 +31,9 @@ void main()
 		current = current->next;
 		printf("%c\n",current->data);
 	}
+}
+
+node *createnode()
+{
 
 }
