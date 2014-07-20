@@ -21,6 +21,17 @@ void main()
 	insert_node(n1, n2);
 	insert_node(n2, n3);
 	print_list(list);
+	
+	node *list1 = create_node('\0');
+	node *n4 = create_node('d');
+        node *n5 = create_node('e');
+        node *n6 = create_node('f');
+	insert_node(list1, n4);
+	insert_node(n4, n5);
+        insert_node(n5, n6);
+
+	print_list(list1);
+	print_list(list);
 }
 
 node *create_node(char data)
