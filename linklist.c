@@ -5,35 +5,32 @@ typedef struct NODE {
 	char data;
 	struct NODE *next;
 }node;
-node *createnode();
+
+node* create_node(char);
+void insert_node(node*, node*);
 void main() 
 {
-	node *head, *current, *n1, *n2, *n3;
-
-	n1 = (node* )malloc(sizeof(node));
-	head->next = n1;
-	n1->data = 'a';
-	//n1->next = NULL;
+	node *list = create_node('\0');
+	node *n1 = create_node('a');
+	node *n2 = create_node('b');
+	node *n3 = create_node('c');
 	
-	n2 = (node* )malloc(sizeof(node));
-        n1->next = n2;
-        n2->data = 'b';
-        //n2->next = NULL;
-
-	n3 = (node* )malloc(sizeof(node));
-        n2->next = n3;
-        n3->data = 'c';
-        n3->next = NULL;
-	
-	current = head;
-	while(current->next != NULL)
-	{
-		current = current->next;
-		printf("%c\n",current->data);
-	}
+	insert_node(list, n1);
+	insert_node(n1, n2);
+	insert_node(n2, n3);
 }
 
-node *createnode()
+node *create_node(char data)
 {
+	node* n = (node* )malloc(sizeof(node));
+	n->data = data;
+	n->next = NULL;
+	
+	return n;
+}
 
+void insert_node(node* N1, node* N2)
+{
+	N2->next = N1->next;
+	N1->next = N2;
 }
