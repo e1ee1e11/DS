@@ -29,7 +29,7 @@ void main()
 	insert_node(list1, n4);
 	insert_node(n4, n5);
         insert_node(n5, n6);
-
+	n6->next = n1;
 	print_list(list1);
 	print_list(list);
 }
