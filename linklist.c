@@ -9,6 +9,7 @@ typedef struct NODE {
 node* create_node(char);
 void insert_node(node*, node*);
 void print_list(node* );
+void remove_node(node* );
 
 void main() 
 {	
@@ -38,10 +39,19 @@ void main()
 	//insert linklist1 between n1 and n2
 	n6->next = n2;
 	n1->next = n4;	
-
+	
+	/*	
+	//linklist ring
+	n3->next = n1;
+	*/
+	
+	remove_node(n5); //the func. is remove a node behind itself
+	
 	//print link list
 	print_list(list1);
 	print_list(list);
+	
+	
 }
 
 node *create_node(char data)
@@ -68,4 +78,9 @@ void print_list(node* list)
 		n = n->next;
 	}
 	printf("\n");
+}
+
+void remove_node(node* N1)
+{
+	N1->next = N1->next->next;
 }
