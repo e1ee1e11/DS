@@ -34,6 +34,10 @@ void main()
 	insert_node(list1, n4);
 	insert_node(n4, n5);
         insert_node(n5, n6);
+	
+	//insert linklist1 between n1 and n2
+	n6->next = n2;
+	n1->next = n4;	
 
 	//print link list
 	print_list(list1);
