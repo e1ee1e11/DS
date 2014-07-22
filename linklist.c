@@ -10,6 +10,7 @@ node* create_node(char);
 void insert_node(node*, node*);
 void print_list(node* );
 void remove_node(node* );
+void free_list(node* );
 
 void main() 
 {	
@@ -46,12 +47,12 @@ void main()
 	*/
 	
 	remove_node(n5); //the func. is remove a node behind itself
-	
 	//print link list
 	print_list(list1);
 	print_list(list);
 	
-	
+	free_list(list1);
+	free_list(list);
 }
 
 node *create_node(char data)
@@ -83,4 +84,15 @@ void print_list(node* list)
 void remove_node(node* N1)
 {
 	N1->next = N1->next->next;
+}
+
+void free_list(node* list)
+{	
+	//use recursive method to free linklist 
+	if(list->next != NULL)
+	{
+		free_list(list->next);
+	}
+	
+	free(list);
 }
