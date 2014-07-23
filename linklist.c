@@ -46,7 +46,8 @@ void main()
 	n3->next = n1;
 	*/
 	
-	remove_node(n5); //the func. is remove a node behind itself
+	//remove_node(n5); //the func. is remove a node behind itself
+	
 	//print link list
 	print_list(list1);
 	print_list(list);
